@@ -31,6 +31,7 @@ RUN docker-php-ext-enable redis
 # Other PHP7 Extensions
 
 RUN apt-get -y install libsqlite3-dev libsqlite3-0 mysql-client
+RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install pdo_mysql 
 RUN docker-php-ext-install pdo_sqlite
 RUN docker-php-ext-install mysqli
