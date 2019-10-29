@@ -110,3 +110,39 @@ password: tiger
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
+
+
+
+Up All dockers:
+```
+docker-compose up -d
+```
+
+Down all services:
+```
+docker-compose down
+```
+
+Delete and clear Cache
+```
+docker system prune -a
+```
+
+Acess 'bash' of docker webserver, to use php, composer, etc
+```
+docker exec -it 7.2.x-webserver bash
+```
+
+
+Want use php env of docker?!
+
+Create `php` inside of: `/usr/local/bin/`
+```
+#!/bin/bash
+docker exec -i --user=1000:1000 7.2.x-webserver php "$@"
+```
+
+Now just update permission of php: `/usr/local/bin/php`
+```
+sudo chmod +x php
+```
